@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bus Ticket</title>
+
+    <!-- QR Code Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -62,7 +66,7 @@
         </div>
         <div class="detail-row">
             <strong>Passenger:</strong>
-            <span id="passenger">saikumar</span>
+            <span id="passenger">John Doe</span>
         </div>
         <div class="detail-row">
             <strong>Seat:</strong>
@@ -75,14 +79,34 @@
     </div>
     
     <div class="qr-code">
-        <!-- Placeholder for QR code - would need backend generation -->
-        <div style="width: 100px; height: 100px; background-color: #f0f0f0; margin: 0 auto;">
-            QR Code
-        </div>
+        <div id="qrcode"></div>
     </div>
     
     <div class="terms">
         <p>Please present this ticket when boarding. Valid only for specified date and time.</p>
     </div>
+
+    <script>
+        // Collect ticket data
+        const ticketData = {
+            ticketNumber: document.getElementById("ticketNumber").innerText,
+            route: document.getElementById("route").innerText,
+            date: document.getElementById("date").innerText,
+            time: document.getElementById("time").innerText,
+            passenger: document.getElementById("passenger").innerText,
+            seat: document.getElementById("seat").innerText,
+            price: document.getElementById("price").innerText
+        };
+
+        // Convert to string (you can also use JSON)
+        const qrText = JSON.stringify(ticketData);
+
+        // Generate QR
+        new QRCode(document.getElementById("qrcode"), {
+            text: qrText,
+            width: 120,
+            height: 120
+        });
+    </script>
 </body>
 </html>
