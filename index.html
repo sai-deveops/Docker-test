@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Ticket</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 2px solid #333;
+            border-radius: 10px;
+        }
+        .ticket-header {
+            text-align: center;
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-bottom: 2px dashed #ccc;
+        }
+        .ticket-details {
+            margin: 20px 0;
+        }
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            margin: 8px 0;
+        }
+        .qr-code {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .terms {
+            font-size: 12px;
+            color: #666;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="ticket-header">
+        <h2>BUS TICKET</h2>
+    </div>
+    
+    <div class="ticket-details">
+        <div class="detail-row">
+            <strong>Ticket #:</strong>
+            <span id="ticketNumber">BT202605012345</span>
+        </div>
+        <div class="detail-row">
+            <strong>Route:</strong>
+            <span id="route">Downtown - Airport</span>
+        </div>
+        <div class="detail-row">
+            <strong>Date:</strong>
+            <span id="date">2026-05-01</span>
+        </div>
+        <div class="detail-row">
+            <strong>Time:</strong>
+            <span id="time">14:30</span>
+        </div>
+        <div class="detail-row">
+            <strong>Passenger:</strong>
+            <span id="passenger">John Doe</span>
+        </div>
+        <div class="detail-row">
+            <strong>Seat:</strong>
+            <span id="seat">15A</span>
+        </div>
+        <div class="detail-row">
+            <strong>Price:</strong>
+            <span id="price">$5.00</span>
+        </div>
+    </div>
+    
+    <div class="qr-code">
+        <!-- Placeholder for QR code - would need backend generation -->
+        <div style="width: 100px; height: 100px; background-color: #f0f0f0; margin: 0 auto;">
+            QR Code
+        </div>
+    </div>
+    
+    <div class="terms">
+        <p>Please present this ticket when boarding. Valid only for specified date and time.</p>
+    </div>
+</body>
+</html>
